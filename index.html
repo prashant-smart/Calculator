@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i-Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>i-CALCULATOR</h1>
+        <form class="claculator" name="calc" >
+        <input id="input" class="one" name="txt" type="text" readonly>
+        <span class="container_element" onclick="calc.txt.value=''">c</span>
+        <span class="container_element" onclick="dlt()">x</span>
+        <span class="container_element" onclick="calc.txt.value+='-'">-</span>
+        <span class="container_element" onclick="calc.txt.value+='*'">*</span>
+        <span class="container_element" onclick="calc.txt.value+='1'">1</span>
+        <span class="container_element" onclick="calc.txt.value+='2'">2</span>
+        <span class="container_element" onclick="calc.txt.value+='3'">3</span>
+        <span class="container_element" onclick="calc.txt.value+='/'">/</span>
+        <span class="container_element" onclick="calc.txt.value+='4'">4</span>
+        <span class="container_element" onclick="calc.txt.value+='5'">5</span>
+        <span class="container_element" onclick="calc.txt.value+='6'">6</span>
+        <span class="container_element" onclick="calc.txt.value+='+'">+</span>
+        <span class="container_element" onclick="calc.txt.value+='7'">7</span>
+        <span class="container_element" onclick="calc.txt.value+='8'">8</span>
+        <span class="container_element" onclick="calc.txt.value+='9'">9</span>
+        <span class="container_element" onclick="calc.txt.value+='0'">0</span>
+        <span class="container_element" onclick="calc.txt.value+='00'">00</span>
+        <span class="container_element" onclick="calc.txt.value+='.'">.</span>
+        <span class="container_element" onclick="calc.txt.value=eval(calc.txt.value)">=</span>
+    </form>
+    </div>
+</body>
+<script>
+    function dlt(){
+        let str=document.querySelector(".one").value;
+        let arr=Array.from(str);
+        arr.pop();
+        str=""
+        arr.forEach((element)=>{
+            if(element!=","){ 
+                str+=element}
+            })
+        console.log(str);
+        document.querySelector(".one").value=str
+           }
+    
+</script>
+</html>
